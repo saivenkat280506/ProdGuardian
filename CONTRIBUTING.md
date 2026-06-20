@@ -8,8 +8,8 @@ Thank you for your interest in contributing! This guide will help you get starte
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/prodguardian.git
-cd prodguardian
+git clone https://github.com/saivenkat280506/ProdGuardian.git
+cd ProdGuardian
 
 # Create virtual environment
 python -m venv venv

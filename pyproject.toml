@@ -48,10 +48,10 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/prodguardian"
-Repository = "https://github.com/yourusername/prodguardian"
-Issues = "https://github.com/yourusername/prodguardian/issues"
-Documentation = "https://github.com/yourusername/prodguardian#readme"
+Homepage = "https://github.com/saivenkat280506/ProdGuardian"
+Repository = "https://github.com/saivenkat280506/ProdGuardian"
+Issues = "https://github.com/saivenkat280506/ProdGuardian/issues"
+Documentation = "https://github.com/saivenkat280506/ProdGuardian#readme"
 
 [project.scripts]
 prodguardian = "prodguardian.cli:cli"

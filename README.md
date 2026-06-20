@@ -1,7 +1,6 @@
 # ProdGuardian
 
-[![PyPI version](https://badge.fury.io/py/prodguardian.svg)](https://pypi.org/project/prodguardian/)
-[![Tests](https://github.com/yourusername/prodguardian/actions/workflows/test.yml/badge.svg)](https://github.com/yourusername/prodguardian/actions)
+[![Tests](https://github.com/saivenkat280506/ProdGuardian/actions/workflows/test.yml/badge.svg)](https://github.com/saivenkat280506/ProdGuardian/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 **Production readiness auditor for vibe-coded apps**
@@ -25,8 +24,8 @@ ProdGuardian scans your codebase for security issues, checks for missing product
 ## Quick Start
 
 ```bash
-# Install
-pip install prodguardian
+# Install from GitHub (PyPI publish coming soon)
+pip install git+https://github.com/saivenkat280506/ProdGuardian.git
 
 # Scan for security issues
 prodguardian scan .
@@ -156,8 +155,8 @@ prodguardian fix SEC001:app.py:42 --yes
 
 ```bash
 # Clone
-git clone https://github.com/yourusername/prodguardian.git
-cd prodguardian
+git clone https://github.com/saivenkat280506/ProdGuardian.git
+cd ProdGuardian
 
 # Install dev dependencies
 pip install -e ".[dev]"
