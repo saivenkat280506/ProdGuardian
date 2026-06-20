@@ -1,0 +1,46 @@
+{% if framework == 'flask' %}
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
+
+limiter = Limiter(
+    key_func=get_remote_address,
+    default_limits=["100 per hour", "10 per minute"],
+    storage_uri="memory://",
+)
+
+def init_limiter(app):
+    """Initialize rate limiter with Flask app."""
+    limiter.init_app(app)
+    return limiter
+{% elif framework == 'fastapi' %}
+from fastapi import Request
+from starlette.middleware.base import BaseHTTPMiddleware
+import time
+
+class RateLimitMiddleware(BaseHTTPMiddleware):
+    def __init__(self, app, max_requests: int = 100, window_seconds: int = 60):
+        super().__init__(app)
+        self.max_requests = max_requests
+        self.window_seconds = window_seconds
+        self.requests = {}
+
+    async def dispatch(self, request: Request, call_next):
+        client_ip = request.client.host
+        now = time.time()
+        if client_ip not in self.requests:
+            self.requests[client_ip] = []
+        self.requests[client_ip] = [
+            t for t in self.requests[client_ip] if now - t < self.window_seconds
+        ]
+        if len(self.requests[client_ip]) >= self.max_requests:
+            return JSONResponse(
+                status_code=429,
+                content={"error": "Rate limited", "message": "Too many requests"},
+            )
+        self.requests[client_ip].append(now)
+        return await call_next(request)
+{% else %}
+# Rate limiting middleware placeholder
+# Implement rate limiting for your framework
+pass
+{% endif %}

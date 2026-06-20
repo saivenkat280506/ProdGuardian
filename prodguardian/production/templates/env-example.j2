@@ -1,0 +1,12 @@
+# Environment variables required by the application
+# Copy this file to .env and fill in the values
+
+{% for var in variables %}
+{{ var }}=your_{{ var.lower() }}_here
+{% endfor %}
+{% if not variables %}
+# Add your environment variables here
+# DATABASE_URL=postgresql://user:pass@localhost/db
+# SECRET_KEY=your-secret-key
+# API_KEY=your-api-key
+{% endif %}

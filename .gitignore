@@ -1,0 +1,70 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+.env.local
+.env.production
+
+# ProdGuardian user config (never commit — use ~/.prodguardian.toml locally)
+.prodguardian.toml
+.prodguardian_presets.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Testing
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+.tox/
+.nox/
+
+# Lint / type checking
+.ruff_cache/
+.mypy_cache/
+
+# ProdGuardian runtime caches
+.prodguardian_cache/
+.prodguardian_llm_cache/
+*.db
+*.sqlite
+*.sqlite3
+
+# Local scan / debug output
+fixtures-scan.json
+scan-results.json
+output/
+*.scan.json
+
+# IDE / editor / agent session artifacts
+.vscode/
+.idea/
+.cursor/
+terminals/
+agent-tools/
+mcps/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
